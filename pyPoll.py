@@ -1,7 +1,7 @@
 import os
 import csv
 #selecting the file
-pyPoll_csvpath = os.path.join("..", "pythonActivities", "election_data_1.csv")
+pyPoll_csvpath = os.path.join("..","python3-challenge", "election_data_1.csv")
 #opening and reading the file
 with open(pyPoll_csvpath, 'r', newline='') as csvFile:
     csvreader = csv.reader(csvFile, delimiter=',')
@@ -85,14 +85,26 @@ with open(pyPoll_csvpath, 'r', newline='') as csvFile:
     election_csv = zip(totVotes, pctVotes1, pctVotes2, pctVotes3, pctVotes4, candidate1, candidate2, candidate3, candidate4, popVotes)
     print(election_csv)
     # Set variable for output file
-    output_file = os.path.join("..", "pythonActivities", "Election_Results.txt")
+    output_file = os.path.join("..", "python3-challenge", "Election_Results.txt")
 
     #  Open the output file
-    with open(output_file, 'w', newline='') as dataFile:
+    with open(output_file, 'w') as dataFile:
         writer = csv.writer(dataFile, delimiter=',')
 
         # Write the header row
-        writer.writerow(["Election Results", "Total Votes", "Vestal", "Torres", "Seth", "Cordin", "Winner"])
-
+        dataFile.write
+        dataFile.write("Election Results")
+        dataFile.write("-----------------------------")
+        dataFile.write("Total Votes: " + str(votesCast))
+        dataFile.write("-----------------------------")
+        dataFile.write("Vestal: ", vestalPct, "%" "(", vestal, ")")
+        dataFile.write("Torres: ", torresPct, "%", "(", torres, ")")
+        dataFile.write("Seth: ", sethPct, "%", "(", seth, ")")
+        dataFile.write("Cordin: ", cordinPct, "%", "(", cordin, ")")
+        dataFile.write(totVotes)
+        dataFile.write(popVotes)
+        dataFile.write("-----------------------------")
+        dataFile.write("Winner: ", winner)
+        dataFile.write("-----------------------------")
         # Write in zipped rows
-        writer.writerows(election_csv)
+        #writer.writerows(election_csv)
