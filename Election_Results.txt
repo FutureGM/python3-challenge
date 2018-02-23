@@ -1,0 +1,2 @@
+Election Results,Total Votes,Vestal,Torres,Seth,Cordin,Winner
+803000,48,44,5,3,385440,353320,40150,24090,"('Vestal', 385440)"
