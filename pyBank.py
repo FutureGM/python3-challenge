@@ -2,14 +2,14 @@ import os
 import csv
 
 csvPathList = []
-pybank_csvpath = os.path.join("..","pythonActivities","budget_data_1.csv")
-pybank_csvpath2 = os.path.join("..", "pythonActivities", "budget_data_2.csv")
+pybank_csvpath = os.path.join("..","python3-challenge","budget_data_1.csv")
+pybank_csvpath2 = os.path.join("..", "python3-challenge", "budget_data_2.csv")
 
 csvPathList.append(pybank_csvpath)
 csvPathList.append(pybank_csvpath2)
 
 for csvPath in csvPathList:
-    with open(csvPath, newline='') as csvFile:
+    with open(csvPath, 'r', newline='') as csvFile:
         csvreader = csv.reader(csvFile, delimiter=',')
 
         monthlyRevenue = 0
@@ -69,7 +69,7 @@ for csvPath in csvPathList:
         budget_csv = zip(dates, amount, avgRevChange, grtInc, grtDec)
         print(budget_csv)
            # Set variable for output file
-        output_file = os.path.join("..", "pythonActivities", "Budget_Analysis"+str(csvPathList.index(csvPath)+1) +".txt")
+        output_file = os.path.join("..", "python3-challenge", "Budget_Analysis"+str(csvPathList.index(csvPath)+1) +".txt")
 
            #  Open the output file
         with open(output_file, 'w') as dataFile:
